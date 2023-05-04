@@ -43,6 +43,7 @@ build/Release
 node_modules/
 jspm_packages/
 */.gitignore
+common/node_modules
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
