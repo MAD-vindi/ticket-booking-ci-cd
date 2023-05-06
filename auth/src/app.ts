@@ -10,7 +10,7 @@ import { errorHandler , NotFoundError} from "@vintickets/common";
 import cookieSession from "cookie-session";
 
 const app = express();
-app.set("trust proxy", true); // so that express is aware that it's behind a proxy of ingress nginx
+app.set("trust proxy", true); // so that express is aware that it's behind a proxy of ingress nginx.
 app.use(bodyParser.json());
 app.use(
   cookieSession({
