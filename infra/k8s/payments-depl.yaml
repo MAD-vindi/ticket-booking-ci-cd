@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: payments
-          image: madvindi/payments
+          image: us.gcr.io/bookmyticket-dev/payments
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

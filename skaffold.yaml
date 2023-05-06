@@ -2,7 +2,7 @@ apiVersion: skaffold/v4beta4
 kind: Config
 build:
   artifacts:
-    - image: madvindi/auth
+    - image: us.gcr.io/bookmyticket-dev/auth
       context: auth
       sync:
         manual:
@@ -10,7 +10,7 @@ build:
             dest: .
       docker:
         dockerfile: Dockerfile
-    - image: madvindi/client
+    - image: us.gcr.io/bookmyticket-dev/client
       context: client
       sync:
         manual:
@@ -18,13 +18,13 @@ build:
             dest: .
       docker:
         dockerfile: Dockerfile
-    - image: madvindi/tickets
+    - image: us.gcr.io/bookmyticket-dev/tickets
       context: tickets
       sync:
         manual:
           - src: src/**/*.ts
             dest: .
-    - image: madvindi/orders
+    - image: us.gcr.io/bookmyticket-dev/orders
       context: orders
       sync:
         manual:
@@ -32,7 +32,7 @@ build:
             dest: .
       docker:
         dockerfile: Dockerfile
-    - image: madvindi/expiration
+    - image: us.gcr.io/bookmyticket-dev/expiration
       context: expiration
       sync: 
         manual:
@@ -40,7 +40,7 @@ build:
             src: src/**/*.ts
       docker:
         dockerfile: Dockerfile
-    - image: madvindi/payments
+    - image: us.gcr.io/bookmyticket-dev/payments
       context: payments
       sync: 
         manual:
@@ -48,8 +48,10 @@ build:
             src: src/**/*.ts
       docker:
         dockerfile: Dockerfile
-  local:
-    push: false
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: bookmyticket-dev
 manifests:
   rawYaml:
     - ./infra/k8s/*.yaml

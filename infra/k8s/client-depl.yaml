@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: madvindi/client
+          image: us.gcr.io/bookmyticket-dev/client
 
 ---
 apiVersion: v1
